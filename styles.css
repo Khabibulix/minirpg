@@ -1,0 +1,41 @@
+img {
+    width: 300px;
+    position: absolute;
+    top: 0%;
+    right: 30%;
+}
+
+#conteneur-btn {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+
+#conteneur-btn button{
+    margin: 10px;
+}
+
+#conteneur-stats {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 600px;
+    font-size: 0.9em;
+}
+#conteneur-stats #hp{
+    width: 300px;
+}
+
+#conteneur-stats #exp {
+    width: 300px;
+}
+
+#log{
+    height: 200px;
+    width: 400px;
+}
+
+#menu{
+    margin: 25px;
+    visibility: hidden;
+}
