@@ -29,9 +29,19 @@ var save = [];
 var bisou = 0;
 
 //Random Orc
-var orcHp = Math.floor(100 * Math.random());
-var orcAtk = Math.floor(15 * Math.random());
-var expPerOrc = Math.floor(45 * Math.random());
+var orcHp = Randomizer(100);
+var orcAtk = Randomizer(15);
+var expPerOrc = Randomizer(45);
+
+class Orc {
+    constructor (orcHp, orcAtk, expPerOrc){
+        this.orcHp = orcHp;
+        this.orcAtk = orcAtk;
+        this.exp = expPerOrc;
+    }
+}
+
+
 
 
 
@@ -46,8 +56,7 @@ attack.addEventListener("click", function attack(){
         }
         if (orcHp < 0){
             log.value = "Vous avez tué un orc, bravo! \nMais un autre apparait! ";
-            orcHp = Math.floor(200 * Math.random());
-            orcAtk = Math.floor(40 * Math.random());
+            var orc2 = new Orc(Randomizer(200), Randomizer(40), Randomizer(45));
             expGained();
             orcsKilled++;
             timer();
@@ -56,29 +65,23 @@ attack.addEventListener("click", function attack(){
             gameOver();
         }
         if (compteur > 15){
-            orcHp = Math.floor(300 * Math.random());
-            orcAtk = Math.floor(80 * Math.random());
+            var orc2 = new Orc(Randomizer(300), Randomizer(80), 25 + Randomizer(45));
             log.value = "Un commandant orc apparaît, prenez garde!";
-            expPerOrc += 25;
             expGained();
             commandantsOrcs++;
             timer();
         }
         if (compteur > 40){
-            orcHp = Math.floor(700 * Math.random());
-            orcAtk = Math.floor(160 * Math.random());
+            var orc2 = new Orc(Randomizer(700), Randomizer(160), 45 + Randomizer(45));
             log.value = "Un champion orc apparaît, prenez garde!";
-            expPerOrc += 45;
             expGained();
             championsOrcs++;
             timer();
         }
         if (compteur > 75){
-            orcHp = Math.floor(1400 * Math.random());
-            orcAtk = Math.floor(180 * Math.random());
+            var orc2 = new Orc(Randomizer(1500), Randomizer(180), 95 + Randomizer(45));
             log.value = "Un seigneur orc apparaît, prenez garde!";
             expPerOrc += 95;
-            expGained();
             championsOrcs++;
             timer();
         }
@@ -134,7 +137,7 @@ function up(){
         ninja();
     });
     two.addEventListener("click", function twofunction(){
-        playerAtk += Math.floor( 10 * Math.random());
+        playerAtk += Randomizer(10);
         ninja();
     });
     three.addEventListener("click", function threefunction(){
@@ -160,6 +163,11 @@ function timer(){
     setInterval(function(){
         log.value = "";
     }, 10000);
+}
+
+function Randomizer(x){
+   var r = Math.floor(x * Math.random());
+   return r; 
 }
 
 
