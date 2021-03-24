@@ -127,14 +127,14 @@ function expGained(){
 
 //mort
 function gameOver(){
-    alert("Vous avez succombé à la multitude d'orcs, votre cadavre sera sûrement souillé, violé et démembré. Pas nécessairement dans cet ordre.");
+    alert("Vous avez succombé à la multitude d'ennemis, votre cadavre sera sûrement souillé, violé et démembré. Pas nécessairement dans cet ordre.");
     clear();
 }
 
 //victoire
 function victory(){
-   var r = confirm("Vous avez réussi à vaincre Glaurung, aventurier, félicitations! Voulez-vous continuer?");
-   if (r == true) {
+   var fin = confirm("Vous avez réussi à vaincre Glaurung, aventurier, félicitations! Voulez-vous continuer?");
+   if (fin == true) {
      alert("D'autres monstres sont à venir, promis!")   
     }else {
     clear();
