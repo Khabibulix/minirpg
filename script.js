@@ -42,13 +42,14 @@ class Monster {
     }
 }
 
+//Objets Orcs, du plus faible au plus puissant
 var orc1 = new Monster(Randomizer(100), Randomizer(20), Randomizer(15));
 var orc2 = new Monster(Randomizer(300), Randomizer(40), 25 + Randomizer(25));            
 var orc3 = new Monster(Randomizer(400), Randomizer(90), 45 + Randomizer(45));
 var orc4 = new Monster(Randomizer(1800), Randomizer(140), 95 + Randomizer(85));
 var dragon1 = new Monster(1400 + Randomizer(4800),200 + Randomizer(200), 0);
                       
-//Sys Combat
+//Système de Combat
 attack.addEventListener("click", function attack(){
     monsterHp =  monsterHp - playerAtk;
     compteur++;
@@ -64,22 +65,24 @@ attack.addEventListener("click", function attack(){
             if ( compteur < 50){
                 nouveauMonstre(orc1);
                 log.value = "Un orc apparaît, prenez garde!";
-                switchTo(orcImg);
                 orcsKilled++;
-            }else if ( compteur < 70){
+            }
+            else if ( compteur < 70){
                 nouveauMonstre(orc2);
                 log.value = "Un commandant orc apparaît, prenez garde!";
-                switchTo(orcImg);
                 commandantsOrcs++;
-            }else if (compteur < 100){
+            }
+            else if (compteur < 100){
                 nouveauMonstre(orc3);
                 log.value = "Un champion orc apparaît, prenez garde!";
                 championsOrcs++;
-            }else if (compteur < 150){
+            }
+            else if (compteur < 150){
                 nouveauMonstre(orc4);
                 log.value = "Un lord orc apparaît, prenez garde!";
                 lordsOrcs++;
-            } else if (compteur >= 150){
+            }
+            else if (compteur >= 150){
                 switchTo(dragonImg);
                 nouveauMonstre(dragon1);
                 log.value = "Voici Glaurung, le maître des lieux, fuyez ou combattez!";
@@ -89,7 +92,7 @@ attack.addEventListener("click", function attack(){
                 }
             }
 
-                }
+    }
         if (playerHp <= 0){
             gameOver();
         }
@@ -119,7 +122,7 @@ function expGained(){
             up();
             level++;
             hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
-            nextLevel += 200;
+            nextLevel += 200 + compteur;
             playerExp = 0;
             exp.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
         }
@@ -205,6 +208,7 @@ function nouveauMonstre(x){
         expPerMonster = x.exp;
 }
 
+//Buff pour 3 tours
 function buffed(){
     var y = compteur + 3;
     for (var n= compteur; n < y; n++ )
