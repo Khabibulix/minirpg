@@ -11,15 +11,27 @@ var menu = document.getElementById("menu");
 var dragonImg = document.getElementById("dragon");
 var orcImg = document.getElementById("orc");
 
+result.addEventListener("click", display());
+
 //créa du joueur et des monstres
 class Player{
-	constructor(hp, atk, exp, nextLevel, currentLevel){this.hp = hp;this.atk = atk;this.exp = exp;this.nextLevel = nextLevel;this.currentLevel = currentLevel;}
-	}
+	constructor(hp, atk, exp, nextLevel, currentLevel){
+        this.hp = hp;
+        this.atk = atk;
+        this.exp = exp;
+        this.nextLevel = nextLevel;
+        this.currentLevel = currentLevel;
+    }
+}
 
 
 class Monster {
-    constructor (monsterHp, monsterAtk, exp){this.monsterHp = monsterHp;this.monsterAtk = monsterAtk;this.exp = expPerMonster;}
+    constructor (monsterHp, monsterAtk, exp){
+        this.monsterHp = monsterHp;
+        this.monsterAtk = monsterAtk;
+        this.exp = expPerMonster;
     }
+}
 
 var myPlayer = new Player (200, 30, 0, 100, 0);
 
@@ -60,32 +72,42 @@ attack.addEventListener("click", function attack(){
         myPlayer.hp -= monsterAtk;
         hp.innerHTML = "Vous avez " +myPlayer.hp+ " Points de vie!";
     }
-    if (myPlayer.hp <= 0){
-            gameOver();
-        }
-
     if (monsterHp < 0){
         log.value = "";
         log.value = "Vous avez vaincu l'ennemi, bravo! \nMais en voici un autre! ";
         expGained();
-            if ( compteur < 50){nouveauMonstre(orc1); orcsKilled++;
+            if ( compteur < 50){
+                nouveauMonstre(orc1);
+                orcsKilled++;
                 log.value = "Un orc apparaît, prenez garde!";                
             }
-            else if ( compteur < 70){nouveauMonstre(orc2); commandantsOrcs++;                
+            else if ( compteur < 70){
+                nouveauMonstre(orc2);
+                commandantsOrcs++;                
                 log.value = "Un commandant orc apparaît, prenez garde!";                
             }
-            else if (compteur < 100){nouveauMonstre(orc3); championsOrcs++;                
+            else if (compteur < 100){
+                nouveauMonstre(orc3);
+                championsOrcs++;                
                 log.value = "Un champion orc apparaît, prenez garde!";                
             }
-            else if (compteur < 150){nouveauMonstre(orc4); lordsOrcs++;                
+            else if (compteur < 150){
+                nouveauMonstre(orc4);
+                lordsOrcs++;                
                 log.value = "Un lord orc apparaît, prenez garde!";                
             }
-            else if (compteur >= 150){switchTo(dragonImg);nouveauMonstre(dragon1); dragonsKilled++;    
+            else if (compteur >= 150){
+                switchTo(dragonImg);
+                nouveauMonstre(dragon1);
+                dragonsKilled++;    
                 log.value = "Voici Glaurung, le maître des lieux, fuyez ou combattez!";
                 if (dragonsKilled = 1){
                     victory();
                 }
             }
+     if (myPlayer.hp <= 0){
+            gameOver();
+        }
     }
 });
 
@@ -95,8 +117,6 @@ function nouveauMonstre(x){
         expPerMonster = x.exp;
 }
 
-
-//changing monster displayed
 
 function switchTo(x){
     var r = x.style.visibility="visible";
@@ -120,10 +140,28 @@ function expGained(){
         }
 }
 
+
+//Btn Menu
+function ninja(){
+	menu.style.visibility="hidden";
+};
+
+function unninja(){
+	menu.style.visibility="visible";
+};
+
+    
+//Timer
+function timer(){
+    setInterval(function(){
+        log.value = "";
+    }, 10000);
+}
+
 //Up
 function up(){
     alert("Vous avez gagné un niveau! GG! \n Appuyez sur le bouton 1 pour vous soigner! \n Appuyez sur le bouton 2 pour augmenter votre attaque! \n Appuyez sur le bouton 3 pour recevoir une bénédiction!");
-    unninja(menu);
+    unninja();
     one.addEventListener("click", function onefunction(){
     	myPlayer.hp += 100;
     	ninja();        
@@ -148,55 +186,37 @@ function buffed(){
     monsterAtk = 0;
     hp.innerHTML = "Vous avez " +myPlayer.hp+ " Points de vie!";    
 }
-
-//Btn Menu
-function ninja(){menu.style.visibility="hidden";};
-
-function unninja(){menu.style.visibility="visible";};
-    
-//Timer
-function timer(){
-    setInterval(function(){
-        log.value = "";
-    }, 10000);
+function display(){
+    save[0] = "Niveau max atteint: " +myPlayer.level;
+    save[1] = "\nNombre d'orcs tués: " +orcsKilled;
+    save[2] = "\nBuffs obtenus: " +buff;
+    save[3] = "\nTours joués: " +compteur;
+    save[4] = "\nNombre de commandants orcs tués: " +commandantsOrcs;
+    save[5] = "\nNombre de champions orcs tués: " +championsOrcs;
+    save[6] = "\nNombre de seigneurs orcs tués: " +lordsOrcs;
+    alert(save);
 }
 
-
-
-
-//mort
-function gameOver(){
-    alert("Vous avez succombé à la multitude d'ennemis, votre cadavre sera sûrement souillé, violé et démembré. Pas nécessairement dans cet ordre.");
-    clear();
-}
-
-//victoire
-function victory(){
-   var fin = confirm("Vous avez réussi à vaincre Glaurung, aventurier, félicitations! Voulez-vous continuer?");
-   if (fin) {
-     alert("D'autres monstres sont à venir, promis!")   
-    }else {
-    clear();
-    }
-}
 
 function clear(){
     compteur = 0;
     var futurePlayer = new Player (200, 30, 0, 100, 0);
     log.value = "";
     hp.innerHTML = "Vous avez " +futurePlayer.hp+ " Points de vie!";
-    exp.innerHTML = futurePlayer.exp+ " Exp, " +futurePlayer.nextLevel+ " pour le prochain niveau!"
+    exp.innerHTML = futurePlayer.exp+ " Exp, " +futurePlayer.nextLevel+ " pour le prochain niveau!";
     switchTo(orcImg);
 }
 
-//Log de jeu
-result.addEventListener("click", function display(){
-   save[0] = "Niveau max atteint: " +myPlayer.level;
-   save[1] = "\nNombre d'orcs tués: " +orcsKilled;
-   save[2] = "\nBuffs obtenus: " +buff;
-   save[3] = "\nTours joués: " +compteur;
-   save[4] = "\nNombre de commandants orcs tués: " +commandantsOrcs;
-   save[5] = "\nNombre de champions orcs tués: " +championsOrcs;
-   save[6] = "\nNombre de seigneurs orcs tués: " +lordsOrcs;
-   alert(save);
-})
+//mort
+function gameOver(){
+    alert("Vous avez succombé à la multitude d'ennemis, votre cadavre sera sûrement souillé, violé et démembré. Pas nécessairement dans cet ordre.");
+    clear();
+    display();    
+};
+
+//victoire
+function victory(){
+   var fin = confirm("Vous avez réussi à vaincre Glaurung, aventurier, félicitations! Voulez-vous continuer?");
+   if (fin) {alert("D'autres monstres sont à venir, promis!")}
+   else {clear();}
+};
