@@ -3,6 +3,7 @@ img {
     position: absolute;
     top: 0%;
     right: 30%;
+    border: 1px black solid;
 }
 
 #conteneur-btn {
