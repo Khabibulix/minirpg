@@ -10,36 +10,13 @@
     height: 10px;
 }
 
-=======
-img {
-    width: 300px;
-    position: absolute;
-    top: 0%;
-    right: 30%;
-    border: 1px black solid;
-}
 
-#conteneur-btn {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-}
->>>>>>> b1c78d504a9c257fdd8cc041df1ddb7ef89cda03
 
 #conteneur-btn button{
     margin: 10px;
 }
 
-<<<<<<< HEAD
-=======
-#conteneur-stats {
-    position: absolute;
-    top: 55%;
-    left: 25%;
-    width: 600px;
-    font-size: 0.9em;
-}
->>>>>>> b1c78d504a9c257fdd8cc041df1ddb7ef89cda03
+
 #conteneur-stats #hp{
     width: 300px;
 }
@@ -52,10 +29,7 @@ img {
     height: 200px;
     width: 400px;
 	background-color: white;
-<<<<<<< HEAD
-=======
 	resize: none;
->>>>>>> b1c78d504a9c257fdd8cc041df1ddb7ef89cda03
 }
 
 #menu{
@@ -71,21 +45,3 @@ img {
     visibility: hidden;
 }
 
-<<<<<<< HEAD
-=======
-
-    #conteneur-stats {
-        position: absolute;
-        top: 55%;
-        left: 40%;
-        width: 600px;
-        font-size: 0.9em;
-    }
-    #conteneur-btn {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-    }
-
->>>>>>> b1c78d504a9c257fdd8cc041df1ddb7ef89cda03
-}
