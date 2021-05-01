@@ -4,20 +4,22 @@
 
 img {
     width: 300px;
-    position: absolute;
+    /*position: absolute;*/
     top: 0%;
     right: 30%;
     border: 1px black solid;
 }
 
 #card {
-    margin-top: 15px;
-    flex-wrap: nowrap;
-    align-content: space-around;
-    flex-direction: row;
-    justify-content: space-evenly;
+    margin-top :15px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: flex-end;
     align-items: flex-end;
+
 }
+
 
 #conteneur-btn {
     position: absolute;
