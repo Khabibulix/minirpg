@@ -1,9 +1,22 @@
+.flex {
+    display:flex;
+}
+
 img {
     width: 300px;
     position: absolute;
     top: 0%;
     right: 30%;
     border: 1px black solid;
+}
+
+#card {
+    margin-top: 15px;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }
 
 #conteneur-btn {
