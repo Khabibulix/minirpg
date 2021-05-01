@@ -1,43 +1,19 @@
-.flex {
-    display:flex;
-}
-
-img {
-    width: 300px;
-    /*position: absolute;*/
-    top: 0%;
-    right: 30%;
-    border: 1px black solid;
-}
 
 #card {
-    margin-top :15px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: flex-end;
-    align-items: flex-end;
-
+     display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: baseline;
+    height: 10px;
 }
 
-
-#conteneur-btn {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-}
 
 #conteneur-btn button{
     margin: 10px;
 }
 
-#conteneur-stats {
-    position: absolute;
-    top: 55%;
-    left: 25%;
-    width: 600px;
-    font-size: 0.9em;
-}
 #conteneur-stats #hp{
     width: 300px;
 }
@@ -64,19 +40,5 @@ img {
 #dragon{
     visibility: hidden;
 }
-
-
-    #conteneur-stats {
-        position: absolute;
-        top: 55%;
-        left: 40%;
-        width: 600px;
-        font-size: 0.9em;
-    }
-    #conteneur-btn {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-    }
 
 }
