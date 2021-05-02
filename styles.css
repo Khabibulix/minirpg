@@ -1,74 +1,106 @@
 
+/*Salut bro, j'ai:
+. Réorganisé le fichier
+. Supprimé l'id card qui servait à rien, on avait l'id illustration qui faisait le café
+. Edit: Je l'ai remis pour mettre la barre de vie et l'image ensemble
+. Refais ta carte correctement, hésite pas à mettre un feedback en comm au cas où on
+se chope pas
+. Renommé ta barre pour mieux m'y retrouver
+. Laisse le dragon en invisible, m'enfin!
+	Edit le 2 mai à 19h30
+*/
+
 /* HEADER*/ 
 
 header{
 	border: solid black 5px;
+	text-align: center;
+}
+
+#results {
+	margin-bottom: 10px;
 }
 
 /* BODY GENERAL*/   
-/* BODY-CARD*/
+	/* BODY-IMAGES*/
+	img{
+		height: 250px;
+		border: 2px solid black;
+		border-radius: 30%;
+		margin: 10px;
 
-#card{
-	border: solid black 5px;
-}
+	}
 
-#illustration{
-	border: solid black 5px;
-}
+	#card {
+		display: flex;
+		margin-top: 15px;
+		height: 300px;
+		width: 500px;
+		align-items: center;
+	    align-content: center;
+	    flex-wrap: wrap;
+	    flex-direction: column;
+   		justify-content: flex-start;
+}	
 
-/* BODY BOUTON ACTIONS*/   
-
-#conteneur-btn{
-	border: solid black 5px;
-}
-
-#conteneur-stats{
-	border: solid black 5px;
-}
-
-#gui-log{
-	border: solid black 5px;
-}
-
-/* BODY MENU UP*/   
-
-
-/* OTHER*/ 
-img{
-	width: 25%;
-}
-
-#conteneur-btn button{
-    margin: 10px;
-}
+	#dragon{
+	    visibility: hidden;
+	}
 
 
-#conteneur-stats #hp{
-    width: 300px;
-}
+	#illustration{
+		border: solid black 5px;
+	}
 
-#conteneur-stats #exp {
-    width: 300px;
-}
+	/* BODY BOUTON ACTIONS*/   
 
-#log{
-    height: 200px;
-    width: 400px;
-	background-color: white;
-	resize: none;
-}
+	#conteneur-btn{
+		border: solid black 5px;
+	}
 
-#menu{
-    margin: 25px;
-    visibility: hidden;
-}
+	#conteneur-stats{
+		border: solid black 5px;
+		height: 65px;
+	}
 
-#menu button {
-    margin: 10px;
-}
+	#conteneur-stats #hp{
+	    width: 300px;
+	}
 
-/*
-#dragon{
-    ` visibility: hidden;
-}
-*/
+	#conteneur-stats #exp {
+	    width: 300px;
+	}
+
+	#conteneur-btn button{
+	    margin: 10px;
+	}
+
+	/*TEXTAREA*/  
+
+	#gui-log{
+		border: solid black 5px;
+	}
+
+	#log{
+	    height: 200px;
+	    width: 400px;
+		background-color: white;
+		resize: none;
+	}
+
+	/* BODY MENU UP*/   
+
+	#menu{
+	    margin: 25px;
+	    visibility: hidden;
+	}
+
+
+	#menu button {
+	    margin: 10px;
+	}
+
+
+
+
+
