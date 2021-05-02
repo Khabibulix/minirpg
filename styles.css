@@ -7,34 +7,42 @@
 se chope pas
 . Renommé ta barre pour mieux m'y retrouver
 . Laisse le dragon en invisible, m'enfin!
+https://unsplash.com/photos/1L71sPT5XKc
 	Edit le 2 mai à 19h30
 */
 
 /* HEADER*/ 
 
+* {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 header{
-	border: solid black 5px;
 	text-align: center;
+	margin-top: 15px;
+	padding: 10px;
 }
 
 #results {
 	margin-bottom: 10px;
 }
 
-/* BODY GENERAL*/   
+/* BODY GENERAL*/ 
 	/* BODY-IMAGES*/
 	img{
 		height: 250px;
-		border: 2px solid black;
+		border: 5px solid gray;
 		border-radius: 30%;
 		margin: 10px;
 
 	}
-
-	#card {
+	#illustration {
+		display: flex;
+	}
+	#Orccard {
 		display: flex;
 		margin-top: 15px;
-		height: 300px;
 		width: 500px;
 		align-items: center;
 	    align-content: center;
@@ -43,8 +51,11 @@ header{
    		justify-content: flex-start;
 }	
 
-	#dragon{
+	#DragonCard{
 	    visibility: hidden;
+	    margin-top: 15px;
+		height: 300px;
+		width: 500px;
 	}
 
 
