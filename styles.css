@@ -12,6 +12,10 @@ header{
 	border: solid black 5px;
 }
 
+#illustration{
+	border: solid black 5px;
+}
+
 /* BODY BOUTON ACTIONS*/   
 
 #conteneur-btn{
@@ -63,7 +67,8 @@ img{
     margin: 10px;
 }
 
+/*
 #dragon{
-    visibility: hidden;
+    ` visibility: hidden;
 }
-
+*/
