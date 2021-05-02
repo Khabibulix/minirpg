@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------------------
+Salut bro, j'ai:
+. Réorganisé le fichier
+. Supprimé l'id card qui servait à rien, on avait l'id illustration qui faisait le café
+. Edit: Je l'ai remis pour mettre la barre de vie et l'image ensemble
+. Refais ta carte correctement, hésite pas à mettre un feedback en comm au cas où on
+se chope pas
+. Renommé ta barre pour mieux m'y retrouver
+. Laisse le dragon en invisible, m'enfin!
+
+Bébé Soleil		Edit le 2 mai à 19h30
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+Re, j'ai:
+. Corrigé le souci en fouinant dans l'historique, le fichier html était en cause,
+je ne sais toujours pas d'où vient l'erreur ceci dit.
+. Je suis en train de réfléchir pour mettre une image en background.
+
+Bébé Soleil		Edit le 3 mai à 01h10
+-------------------------------------------------------------------------------------------
+
+
