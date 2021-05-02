@@ -1,9 +1,38 @@
 
 /* HEADER*/ 
+
+header{
+	border: solid black 5px;
+}
+
 /* BODY GENERAL*/   
 /* BODY-CARD*/
+
+#card{
+	border: solid black 5px;
+}
+
 /* BODY BOUTON ACTIONS*/   
+
+#conteneur-btn{
+	border: solid black 5px;
+}
+
+#conteneur-stats{
+	border: solid black 5px;
+}
+
+#gui-log{
+	border: solid black 5px;
+}
+
 /* BODY MENU UP*/   
+
+
+/* OTHER*/ 
+img{
+	width: 25%;
+}
 
 #conteneur-btn button{
     margin: 10px;

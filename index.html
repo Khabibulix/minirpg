@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Orc Slayer</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<div id="card">
+	<head>
+		<meta charset="UTF-8">
+		<title>Orc Slayer</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	<body>
 		<header>
 			<h1>Orc Slayer : The Jeu</h1>
 			<button id ="results"> Mon classement</button>
 		</header>
 
-	<div id="card">
-		<img src="Pics/orc.png" id="orc">
-		<img src="Pics/dragon.png" id="dragon">
-		<meter id="enemyHP" min="0" max="100" low="33" high="66" optimum="90" value="100"></meter>
-	</div>
+		<div id="card">
+			<img src="Pics/orc.png" id="orc">
+			<img src="Pics/dragon.png" id="dragon">
+			<meter id="enemyHP" min="0" max="100" low="33" high="66" optimum="90" value="100"></meter>
+		</div>
 
-    <div id="conteneur-btn">
-        <button id ="atk-btn"> Attaquer!</button>
-	     <section id="menu">
-	     	<button id="oneBtn">Gagner de la vie</button>
-            <button id="twoBtn">Améliorer son attaque</button>
-            <button id="threeBtn">Recevoir une bénédiction</button>
-        </section>
-    </div>    
+		<div id="conteneur-btn">
+			<button id ="atk-btn"> Attaquer!</button>
+			 <section id="menu">
+				<button id="oneBtn">Gagner de la vie</button>
+				<button id="twoBtn">Améliorer son attaque</button>
+				<button id="threeBtn">Recevoir une bénédiction</button>
+			</section>
+		</div>    
 
-    <div id="conteneur-stats">
-        <div id="hp"></div> <br>
-        <div id="exp"></div>
-    </div id="conteneur-stats">
+		<div id="conteneur-stats">
+			<div id="hp"></div> <br>
+			<div id="exp"></div>
+		</div id="conteneur-stats">
 
-    <textarea id="log" disabled></textarea>
-
-    <script src="script.js"></script>
-</body>
+		<div id="gui-log">
+			<textarea id="log" disabled></textarea>
+		</div>
+		
+		<script src="script.js"></script>
+	</body>
 </html>
