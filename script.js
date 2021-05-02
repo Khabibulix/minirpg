@@ -10,6 +10,7 @@ var three = document.getElementById("threeBtn");
 var menu = document.getElementById("menu");
 var dragonImg = document.getElementById("dragon");
 var orcImg = document.getElementById("orc");
+var enemyHP = document.getElementById("enemyHP");
 
 //Variables Player
 var playerHp = 200;
@@ -30,12 +31,14 @@ var buff = 0;
 
 //Orc-making
 var monsterHp = Randomizer(100);
+var monsterHpMax = monsterHp;
 var monsterAtk = Randomizer(15);
 var expPerMonster = Randomizer(45);
 
 class Monster {
-    constructor (monsterHp, monsterAtk, exp){
+    constructor (monsterHp, monsterAtk, exp, monsterHpMax){
         this.monsterHp = monsterHp;
+		this.monsterHpMax = monsterHp;
         this.monsterAtk = monsterAtk;
         this.exp = expPerMonster;
         
@@ -57,6 +60,8 @@ var dragon1 = new Monster(1400 + Randomizer(4800),200 + Randomizer(200), 0);
 //Système de Combat
 attack.addEventListener("click", function attack(){
     monsterHp =  monsterHp - playerAtk;
+	enemyHP.max = monsterHpMax;
+	enemyHP.value = monsterHp;
     compteur++;
     var dex = Math.random();
     if(dex<0.8){
@@ -189,7 +194,10 @@ function switchTo(x){
 function nouveauMonstre(x){
         monsterAtk = x.monsterAtk;
         monsterHp = x.monsterHp;
+		monsterHpMax = x.monsterHp;
         expPerMonster = x.exp;
+		enemyHP.max = monsterHpMax;
+		enemyHP.value = monsterHp;
 }
 
 //Buff pour 3 tours
