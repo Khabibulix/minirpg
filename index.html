@@ -1,29 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Orc Slayer</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <img src="Pics/orc.png" id="orc">
-    <img src="Pics/dragon.png" id="dragon">   
-    <div id="conteneur-btn">
-        <button id ="atk-btn"> Attaquer!</button>
-        <button id ="results"> Mon classement</button>
-        
-    </div>
-    <div id="conteneur-stats">
-        <div id="hp"></div> <br>
-        <div id="exp"></div>
-        <textarea id="log"></textarea>
-        <br>
-        <section id="menu">
-            <button id="oneBtn"> Choix N°1</button>
-            <button id="twoBtn"> Choix N°2</button>
-            <button id="threeBtn"> Choix N°3</button>
-        </section>
-    </div>
-    <script src="script.js"></script>
-</body>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Orc Slayer</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	<body>
+		<header>
+			<h1>Orc Slayer : The Jeu</h1>
+			<button id ="results"> Mon classement</button>
+		</header>
+
+		<div id="illustration">
+			<div id="Orccard">
+				<img src="sprites/orc.png" id="orc">
+				<meter id="enemyHP" min="0" max="100" low="33" high="66" optimum="90" value="100"></meter>
+			</div>	
+			<div id="DragonCard">			
+				<img src="sprites/dragon.png" id="dragon">
+			</div>	
+		</div>
+		
+		<div id="conteneur-btn">
+			<button id="atk-btn">Attaquer!</button>
+			 <section id="menu">
+				<button id="oneBtn">Gagner de la vie</button>
+				<button id="twoBtn">Améliorer son attaque</button>
+				<button id="threeBtn">Recevoir une bénédiction</button>
+			</section>
+		</div>    
+
+		<div id="conteneur-stats">
+			<div id="hp"></div> <br>
+			<div id="exp"></div>
+		</div>
+
+		<div id="gui-log">
+			<textarea id="log" disabled></textarea>
+		</div>
+		
+		<div>
+			<ul>
+				<li>PlayerHP</li>
+				<li>PlayerHPMax</li>
+				<li>PlayerATK</li>
+				<li>EnemyHP</li>
+				<li>EnemyHPMax</li>
+				<li>EnemyATK</li>
+			</ul>
+		</div>
+		
+		<script src="script.js"></script>
+		
+	</body>
 </html>

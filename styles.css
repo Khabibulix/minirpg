@@ -1,82 +1,117 @@
-img {
-    width: 300px;
-    position: absolute;
-    top: 0%;
-    right: 30%;
+
+/*Salut bro, j'ai:
+. Réorganisé le fichier
+. Supprimé l'id card qui servait à rien, on avait l'id illustration qui faisait le café
+. Edit: Je l'ai remis pour mettre la barre de vie et l'image ensemble
+. Refais ta carte correctement, hésite pas à mettre un feedback en comm au cas où on
+se chope pas
+. Renommé ta barre pour mieux m'y retrouver
+. Laisse le dragon en invisible, m'enfin!
+https://unsplash.com/photos/1L71sPT5XKc
+	Edit le 2 mai à 19h30
+*/
+
+/* HEADER*/ 
+
+* {
+	margin-left: 15px;
+	margin-right: 15px;
 }
 
-#conteneur-btn {
-    position: absolute;
-    top: 50%;
-    left: 35%;
+header{
+	text-align: center;
+	margin-top: 15px;
+	padding: 10px;
 }
 
-#conteneur-btn button{
-    margin: 10px;
+#results {
+	margin-bottom: 10px;
 }
 
-#conteneur-stats {
-    position: absolute;
-    top: 55%;
-    left: 25%;
-    width: 600px;
-    font-size: 0.9em;
-}
-#conteneur-stats #hp{
-    width: 300px;
-}
+/* BODY GENERAL*/ 
+	/* BODY-IMAGES*/
+	img{
+		height: 250px;
+		border: 5px solid gray;
+		border-radius: 30%;
+		margin: 10px;
 
-#conteneur-stats #exp {
-    width: 300px;
-}
+	}
+	#illustration {
+		display: flex;
+	}
+	#Orccard {
+		display: flex;
+		margin-top: 15px;
+		width: 500px;
+		align-items: center;
+	    align-content: center;
+	    flex-wrap: wrap;
+	    flex-direction: column;
+   		justify-content: flex-start;
+}	
 
-#log{
-    height: 200px;
-    width: 400px;
-}
+	#DragonCard{
+	    visibility: hidden;
+	    margin-top: 15px;
+		height: 300px;
+		width: 500px;
+	}
 
-#menu{
-    margin: 25px;
-    visibility: hidden;
-}
 
-#menu button {
-    margin: 10px;
-}
+	#illustration{
+		border: solid black 5px;
+	}
 
-#dragon{
-    visibility: hidden;
-}
+	/* BODY BOUTON ACTIONS*/   
 
-/* smartphone responsive*/
-@media screen and (max-width: 768px){
-    img {
-        width: 300px;
-        position: absolute;
-        top: 0%;
-        right: 20%;
-    }
-}
+	#conteneur-btn{
+		border: solid black 5px;
+	}
 
-/* big screen responsive*/
-@media screen and (min-width: 1200px){
-    img {
-        width: 300px;
-        position: absolute;
-        top: 0%;
-        right: 40%;
-    }
-    #conteneur-stats {
-        position: absolute;
-        top: 55%;
-        left: 40%;
-        width: 600px;
-        font-size: 0.9em;
-    }
-    #conteneur-btn {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-    }
+	#conteneur-stats{
+		border: solid black 5px;
+		height: 65px;
+	}
 
-}
+	#conteneur-stats #hp{
+	    width: 300px;
+	}
+
+	#conteneur-stats #exp {
+	    width: 300px;
+	}
+
+	#conteneur-btn button{
+	    margin: 10px;
+	}
+
+	/*TEXTAREA*/  
+
+	#gui-log{
+		border: solid black 5px;
+	}
+
+	#log{
+	    height: 200px;
+	    width: 400px;
+		background-color: white;
+		resize: none;
+	}
+
+	/* BODY MENU UP*/   
+
+	#menu{
+	    margin: 25px;
+	    visibility: hidden;
+	}
+
+
+	#menu button {
+	    margin: 10px;
+	}
+
+
+
+
+
