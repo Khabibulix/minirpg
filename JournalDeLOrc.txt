@@ -1,4 +1,4 @@
--------------------------------------------------------------------------------------------
+﻿-------------------------------------------------------------------------------------------
 Salut bro, j'ai:
 . Réorganisé le fichier
 . Supprimé l'id card qui servait à rien, on avait l'id illustration qui faisait le café
@@ -20,4 +20,12 @@ je ne sais toujours pas d'où vient l'erreur ceci dit.
 Bébé Soleil		Edit le 3 mai à 01h10
 -------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------
+Hey brotha ! j'ai :
+• Rennomé le fichier Pics en sprites parce je trouve ça plus cool.
+• Enfin vu ce doc pour pouvoir te répondre !
+• J'ai un peu modifié les boutons du système de bonus, ils s'activent et se désactivent au lieu de apparaître/disparaître.
+• En feedback, tout ce que tu as fait est bien, le jeu s'améliore clairement !
 
+Pitchumi		Edit le 3 mai à 10h06
+-------------------------------------------------------------------------------------------

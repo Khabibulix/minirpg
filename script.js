@@ -160,16 +160,23 @@ function init(){
 function up(){
     alert("Vous avez gagné un niveau! GG! \n Appuyez sur le bouton 1 pour vous soigner! \n Appuyez sur le bouton 2 pour augmenter votre attaque! \n Appuyez sur le bouton 3 pour recevoir une bénédiction!");
     unninja(menu);
+	unbuttonninja()
     one.addEventListener("click", function onefunction(){
         playerHp += 100;
         hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
         ninja();
+		buttonninja()
     });
-    two.addEventListener("click", function twofunction(){playerAtk *= 2;ninja();});
+    two.addEventListener("click", function twofunction(){
+		playerAtk *= 2;
+		ninja();
+		buttonninja()
+		});
     three.addEventListener("click", function threefunction(){
         buff++;
         buffed(3);
         ninja();
+		buttonninja()
     });
     timer();
 }
@@ -177,6 +184,18 @@ function up(){
 //Btn Menu
 function ninja(){menu.style.visibility="hidden";};
 function unninja(){menu.style.visibility="visible";};
+function buttonninja(){
+	attack.removeAttribute("disabled");
+	one.disabled = true;
+	two.disabled = true;
+	three.disabled = true;
+};
+function unbuttonninja(){
+	attack.disabled = true;
+	one.removeAttribute("disabled");
+	two.removeAttribute("disabled");
+	three.removeAttribute("disabled");
+};
     
 //Timer
 function timer(){
