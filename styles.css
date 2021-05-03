@@ -54,42 +54,64 @@ header{
 
 	/* BODY BOUTON ACTIONS*/   
 
-	#conteneur-btn{
-		border: solid black 5px;
-	}
-
 	#conteneur-btn button{
-	    margin: 10px;
+		margin: auto;
+		width: 60px;
+		height: 60px;
+		border-radius: 30px;
 	}
 
-	button:hover {
-		background-color: darkgray;
+	#conteneur-btn {
+		border: 1px solid black;
+		width: 150px;
 	}
+
+	
+	#atk-btn {
+		margin: 10px;
+		background-color: orange;
+		color: purple;
+	}
+	#oneBtn {
+		margin: 10px;
+		background-color: purple;
+		color: orange;
+	}
+	#twoBtn {
+		margin: 10px;
+		background-color: purple;
+		color: orange;
+		
+	}
+	#threeBtn {
+		margin: 10px;
+		background-color: orange;
+		color: purple;
+	}
+	
 
 	/* BODY STATS*/   
 
 	#conteneur-stats{
 		border: solid black 5px;
 		height: 65px;
+		width: 55%;
+		margin: 15px;
+		text-align: right;
 	}
-
-	#conteneur-stats #hp{
-	    width: 300px;
-	}
-
-	#conteneur-stats #exp {
-	    width: 300px;
-	}
-
 	
 
 	/*TEXTAREA*/  
 
 	#gui-log{
 		border: solid black 5px;
+		height: 265px;
+	    width: 550px;;
 	}
 
 	#log{
+		margin: 15px;
+		padding: 15px;
 	    height: 200px;
 	    width: 400px;
 		background-color: white;
