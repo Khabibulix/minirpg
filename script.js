@@ -1,56 +1,52 @@
 //DOM GETTERS
-	var attack = document.getElementById("atk-btn");
-	var hp = document.getElementById("hp");
-	var exp = document.getElementById("exp");
-	var log = document.getElementById("log");
-	var result = document.getElementById("results");
-	var one = document.getElementById("oneBtn");
-	var two = document.getElementById("twoBtn");
-	var three = document.getElementById("threeBtn");
-	var menu = document.getElementById("menu");
-	var dragonImg = document.getElementById("dragon");
-	var orcImg = document.getElementById("orc");
-	var enemyHP = document.getElementById("enemyHP");
+var attack = document.getElementById("atk-btn");
+var hp = document.getElementById("hp");
+var expLog = document.getElementById("exp");
+var log = document.getElementById("log");
+var result = document.getElementById("results");
+var one = document.getElementById("oneBtn");
+var two = document.getElementById("twoBtn");
+var three = document.getElementById("threeBtn");
+var menu = document.getElementById("menu");
+var dragonImg = document.getElementById("dragon");
+var orcImg = document.getElementById("orc");
+var enemyHP = document.getElementById("enemyHP");
 
 //Variables Player
-	var playerHp = 100;
-	var playerAtk = 15;
-	var playerExp = 0;
-	var nextLevel = 100;
-	var level = 0;
+var playerHp = 200;
+var playerAtk = 30;
+var playerExp = 0;
+var nextLevel = 100;
+var level = 0;
 
 //Variables Game
-	var compteur = 0;
-	var orcsKilled = 0;
-	var commandantsOrcs = 0;
-	var championsOrcs = 0;
-	var lordsOrcs = 0;
-	var dragonsKilled = 0;
-	var save = [];
-	var buff = 0;
+var compteur = 0;
+var orcsKilled = 0;
+var save = [];
+var buff = 0;
 
-//Variables Monster
-	var monsterHp = 100;
-	var monsterHpMax = 100;
-	var monsterAtk = 1;
-	var expPerMonster = 100;
+//Orc-making
+var monsterHp = Randomizer(100);
+var monsterHpMax = monsterHp;
+var monsterAtk = 11;
+var exp = 40;
 
-class Monster { // Generate a new monster based on the defined stats.
-    constructor (monsterHp, monsterAtk, exp, monsterHpMax){
+class Monster {
+    constructor (monsterHp, monsterAtk, exp){
         this.monsterHp = monsterHp;
-		this.monsterHpMax = monsterHp;
-        this.monsterAtk = monsterAtk;
-        this.exp = expPerMonster;    
+		this.monsterAtk = monsterAtk;
+        this.exp = exp;
+        
     }
 }
 
-function Randomizer(x){ //Generate a random value.
+function Randomizer(x){
    var r = Math.floor(x * Math.random());
    return r; 
 }
 
 //Objets Orcs, du plus faible au plus puissant
-var orc = new Monster(100, 15, 15);
+var orc1 = new Monster(monsterHp, monsterAtk, exp);
                       
 //Système de Combat
 attack.addEventListener("click", function attack(){
@@ -58,19 +54,45 @@ attack.addEventListener("click", function attack(){
 	enemyHP.max = monsterHpMax;
 	enemyHP.value = monsterHp;
     compteur++;
-	playerHp -= monsterAtk;
-	hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
+    var dex = Math.random();
+    if(dex<0.8){
+        playerHp -= monsterAtk;
+        hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
+    }
     if (monsterHp < 0){
         log.value = "";
         log.value = "Vous avez vaincu l'ennemi, bravo! \nMais en voici un autre! ";
         expGained();
-		nouveauMonstre(orc);
-        log.value = "Un orc apparaît, prenez garde!";
-		orcsKilled++;
+            if ( compteur < 50){
+                nouveauMonstre();
+                log.value = "Un orc apparaît, prenez garde!";
+                orcsKilled++;
+            }
+            else if ( compteur < 70){
+                nouveauMonstre();
+                log.value = "Un commandant orc apparaît, prenez garde!";
+                commandantsOrcs++;
+            }
+            else if (compteur < 100){
+                nouveauMonstre();
+                log.value = "Un champion orc apparaît, prenez garde!";
+                championsOrcs++;
+            }
+            else if (compteur < 150){
+                nouveauMonstre();
+                log.value = "Un lord orc apparaît, prenez garde!";
+                lordsOrcs++;
+            }
+            else if (compteur >= 150){
+                log.value = "Bien joué, André";
+                victory();
+            }
+
     }
-	if (playerHp <= 0){
-		gameOver();
-	}
+        if (playerHp <= 0){
+            gameOver();
+        }
+    
 });
 
 
@@ -80,17 +102,14 @@ result.addEventListener("click", function display(){
    save[1] = "\nNombre d'orcs tués: " +orcsKilled;
    save[2] = "\nBuffs obtenus: " +buff;
    save[3] = "\nTours joués: " +compteur;
-   save[4] = "\nNombre de commandants orcs tués: " +commandantsOrcs;
-   save[5] = "\nNombre de champions orcs tués: " +championsOrcs;
-   save[6] = "\nNombre de seigneurs orcs tués: " +lordsOrcs;
    alert(save);
 })
 
 //XP
 function expGained(){
-        playerExp += expPerMonster;
+        playerExp += exp;
         nextLevel -= playerExp;
-        exp.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
+        expLog.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
         if(nextLevel < 0){
             init();
             up();
@@ -98,7 +117,7 @@ function expGained(){
             hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
             nextLevel += 200 + compteur;
             playerExp = 0;
-            exp.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
+            expLog.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
         }
 }
 
@@ -110,8 +129,7 @@ function gameOver(){
 
 //victoire
 function victory(){
-   var fin = confirm("Vous avez réussi à vaincre Glaurung, aventurier, félicitations! Voulez-vous continuer?");
-   if (fin == true) {alert("D'autres monstres sont à venir, promis!")}
+    if (fin == true) {alert("D'autres monstres sont à venir, promis!")}
     else {clear();}
 }
 
@@ -168,13 +186,13 @@ function switchTo(x){
     return r;
 }
 
-function nouveauMonstre(x){
-        monsterAtk = x.monsterAtk;
-        monsterHp = x.monsterHp;
-		monsterHpMax = x.monsterHp;
-        expPerMonster = x.exp;
-		enemyHP.max = x.monsterHpMax;
-		enemyHP.value = x.monsterHp;
+function nouveauMonstre(){
+        monsterAtk = orc1.monsterAtk;
+        monsterHp = orc1.monsterHp;
+		monsterHpMax = orc1.monsterHp;
+        exp = orc1.exp;
+		enemyHP.max = monsterHpMax;
+		enemyHP.value = monsterHp;
 }
 
 //Buff pour 3 tours
@@ -187,13 +205,13 @@ function buffed(){
 
 function clear(){
     compteur = 0;
-    playerHp = 100;
-    playerAtk = 15;
+    playerHp = 200;
+    playerAtk = 30;
     playerExp = 0;
     nextLevel = 100;
     level = 0;
     log.value = "";
     hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
-    exp.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
+    expLog.innerHTML = playerExp+ " Exp, " +nextLevel+ " pour le prochain niveau!"
     switchTo(orcImg);
 }
