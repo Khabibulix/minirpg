@@ -27,6 +27,7 @@ Hey brotha ! j'ai :
 • Enfin vu ce doc pour pouvoir te répondre !
 • J'ai un peu modifié les boutons du système de bonus, ils s'activent et se désactivent au lieu de apparaître/disparaître.
 • En feedback, tout ce que tu as fait est bien, le jeu s'améliore clairement !
+• Je n'ai pas trouvé d'info concernant comment on peut changer la couleur de la barre, il n'y a que low/high/optimum dans le html qui permet de définir à partir de quelle valeur la barre passe du vert au rouge en passant par le jaune.
 
 Pitchumi		Edit le 3 mai à 10h06
 -------------------------------------------------------------------------------------------
