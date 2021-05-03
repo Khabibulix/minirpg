@@ -99,6 +99,7 @@ result.addEventListener("click", function display(){
 // Une fois qu'une action est accomplite, cette fonction doit se declancher pour donner et raffraichir tous les retours textuels au joueur.
 function refresh(){ 
 	printstats();
+	hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,7 +110,7 @@ function refresh(){
  *                       Orc making                               |
 -----------------------------------------------------------------*/
 
-var monsterHp = Randomizer(100);
+var monsterHp = 100;
 var monsterHpMax = monsterHp;
 var monsterAtk = 11;
 var exp = 40;
@@ -145,28 +146,21 @@ attack.addEventListener("click", function attack(){
 	enemyHP.max = monsterHpMax;
 	enemyHP.value = monsterHp;
     compteur++;
-    var dex = Math.random();
-    if(dex<0.8){
-        playerHp -= monsterAtk;
-        hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
-    }
     if (monsterHp < 0){
         log.value = "";
         log.value = "Vous avez vaincu l'ennemi, bravo! \nMais en voici un autre! ";
         expGained();
-                nouveauMonstre();
-                log.value = "Un orc apparaît, prenez garde!";
-                orcsKilled++;
-
-            if (compteur >= 150){
-                log.value = "Bien joué, André";
-                victory();
-            }
-
+		nouveauMonstre();
+		log.value = "Un orc apparaît, prenez garde!";
+		orcsKilled++;
+		if (compteur >= 150){
+			log.value = "Bien joué, André";
+			victory();
+		}
     }
-        if (playerHp <= 0){
-            gameOver();
-        }
+	if (playerHp <= 0){
+		gameOver();
+	}
     refresh()
 });
 

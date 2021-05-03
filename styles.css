@@ -51,6 +51,10 @@ header{
 	#illustration{
 		border: solid black 5px;
 	}
+	
+	#enemyHP{
+		width: 150px;
+	}
 
 	/* BODY BOUTON ACTIONS*/   
 
