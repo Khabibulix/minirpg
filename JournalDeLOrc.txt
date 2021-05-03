@@ -37,6 +37,7 @@ Pitchumi		Edit le 3 mai à 10h06
 Gutentag: j'ai :
 • Fait les boutons ronds, je pensais créer des petites icônes correspondantes, pour rendre ça plus sympa.
 . Dans l'idée je voulais faire une interface type GameBoy.
-. Peut-être remplacer boutons par des touches? 
+. Peut-être remplacer boutons par des input de touches? 
+. Aligner le log statut à droite des boutons.
 Bébé soleil		Edit le 3 mai à 14h06
 -------------------------------------------------------------------------------------------
