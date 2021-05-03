@@ -1,15 +1,4 @@
 
-/*Salut bro, j'ai:
-. Réorganisé le fichier
-. Supprimé l'id card qui servait à rien, on avait l'id illustration qui faisait le café
-. Edit: Je l'ai remis pour mettre la barre de vie et l'image ensemble
-. Refais ta carte correctement, hésite pas à mettre un feedback en comm au cas où on
-se chope pas
-. Renommé ta barre pour mieux m'y retrouver
-. Laisse le dragon en invisible, m'enfin!
-https://unsplash.com/photos/1L71sPT5XKc
-	Edit le 2 mai à 19h30
-*/
 
 /* HEADER*/ 
 
@@ -69,6 +58,16 @@ header{
 		border: solid black 5px;
 	}
 
+	#conteneur-btn button{
+	    margin: 10px;
+	}
+
+	button:hover {
+		background-color: darkgray;
+	}
+
+	/* BODY STATS*/   
+
 	#conteneur-stats{
 		border: solid black 5px;
 		height: 65px;
@@ -82,9 +81,7 @@ header{
 	    width: 300px;
 	}
 
-	#conteneur-btn button{
-	    margin: 10px;
-	}
+	
 
 	/*TEXTAREA*/  
 
