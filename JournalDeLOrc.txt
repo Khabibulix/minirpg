@@ -16,6 +16,7 @@ Re, j'ai:
 . Corrigé le souci en fouinant dans l'historique, le fichier html était en cause,
 je ne sais toujours pas d'où vient l'erreur ceci dit.
 . Je suis en train de réfléchir pour mettre une image en background.
+. Ah, je suis tatillon mais on peut changer la couleur de la barre? :o
 
 Bébé Soleil		Edit le 3 mai à 01h10
 -------------------------------------------------------------------------------------------
