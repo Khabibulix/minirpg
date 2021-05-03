@@ -159,31 +159,25 @@ function init(){
 //Up
 function up(){
     alert("Vous avez gagné un niveau! GG! \n Appuyez sur le bouton 1 pour vous soigner! \n Appuyez sur le bouton 2 pour augmenter votre attaque! \n Appuyez sur le bouton 3 pour recevoir une bénédiction!");
-    unninja(menu);
-	unbuttonninja()
+    unbuttonninja()
     one.addEventListener("click", function onefunction(){
         playerHp += 100;
         hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
-        ninja();
-		buttonninja()
+       	buttonninja()
     });
     two.addEventListener("click", function twofunction(){
 		playerAtk *= 2;
-		ninja();
 		buttonninja()
 		});
     three.addEventListener("click", function threefunction(){
         buff++;
         buffed(3);
-        ninja();
-		buttonninja()
+        buttonninja()
     });
     timer();
 }
 
 //Btn Menu
-function ninja(){menu.style.visibility="hidden";};
-function unninja(){menu.style.visibility="visible";};
 function buttonninja(){
 	attack.removeAttribute("disabled");
 	one.disabled = true;
