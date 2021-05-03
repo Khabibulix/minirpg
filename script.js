@@ -1,3 +1,6 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// VARIABLES
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*----------------------------------------------------------------
  *                       DOM GETTERS                              |
@@ -15,6 +18,8 @@ var menu = document.getElementById("menu");
 var dragonImg = document.getElementById("dragon");
 var orcImg = document.getElementById("orc");
 var enemyHP = document.getElementById("enemyHP");
+
+var stats = document.getElementById("stats-stats");
 
 
 /*----------------------------------------------------------------
@@ -37,6 +42,68 @@ var orcsKilled = 0;
 var save = [];
 var buff = 0;
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// AFFICHAGE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*----------------------------------------------------------------
+ *                              BTN MENU                          |
+-----------------------------------------------------------------*/
+
+function buttonninja(){
+	attack.removeAttribute("disabled");
+	one.disabled = true;
+	two.disabled = true;
+	three.disabled = true;
+};
+function unbuttonninja(){
+	attack.disabled = true;
+	one.removeAttribute("disabled");
+	two.removeAttribute("disabled");
+	three.removeAttribute("disabled");
+};
+
+/*----------------------------------------------------------------
+ *                       Stats affichage                         |
+-----------------------------------------------------------------*/
+
+function printstats(){
+	stats.innerHTML = "Votre HP : " +playerHp+
+	"\n Votre ATK : " +playerAtk+
+	"\n Votre XP : " +playerExp+
+	"\n Votre Nextlevel : " +nextLevel+
+	"\n Votre Level : " +level+
+	"\n Son HP : " +monsterHp+
+	"\n Son HP MAX : " +monsterHpMax+
+	"\n Son ATK : " +monsterAtk+ "\n";
+}
+printstats()
+
+/*----------------------------------------------------------------
+ *                       Print results                            |
+-----------------------------------------------------------------*/
+
+result.addEventListener("click", function display(){
+   save[0] = "Niveau max atteint: " +level;
+   save[1] = "\nNombre d'orcs tués: " +orcsKilled;
+   save[2] = "\nBuffs obtenus: " +buff;
+   save[3] = "\nTours joués: " +compteur;
+   alert(save);
+})
+
+/*----------------------------------------------------------------
+ *                       Refresh affichage                       |
+-----------------------------------------------------------------*/
+// Everytime an action is done, this function should trigger to give and refresh all textual feedbacks to the player.
+// Une fois qu'une action est accomplite, cette fonction doit se declancher pour donner et raffraichir tous les retours textuels au joueur.
+function refresh(){ 
+	printstats();
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GAME LOGIC
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*----------------------------------------------------------------
  *                       Orc making                               |
@@ -100,7 +167,7 @@ attack.addEventListener("click", function attack(){
         if (playerHp <= 0){
             gameOver();
         }
-    
+    refresh()
 });
 
 /*----------------------------------------------------------------
@@ -134,19 +201,6 @@ function monsterHpMax(){
 function monsterAtk(){
     return monsterAtk;
 }
-
-
-/*----------------------------------------------------------------
- *                       Print results                            |
------------------------------------------------------------------*/
-
-result.addEventListener("click", function display(){
-   save[0] = "Niveau max atteint: " +level;
-   save[1] = "\nNombre d'orcs tués: " +orcsKilled;
-   save[2] = "\nBuffs obtenus: " +buff;
-   save[3] = "\nTours joués: " +compteur;
-   alert(save);
-})
 
 
 /*----------------------------------------------------------------
@@ -209,36 +263,21 @@ function up(){
         playerHp += 100;
         hp.innerHTML = "Vous avez " +playerHp+ " Points de vie!";
        	buttonninja()
+		refresh()
     });
     two.addEventListener("click", function twofunction(){
 		playerAtk *= 2;
 		buttonninja()
+		refresh()
 		});
     three.addEventListener("click", function threefunction(){
         buff++;
         buffed(3);
         buttonninja()
+		refresh()
     });
     timer();
 }
-
-
-/*----------------------------------------------------------------
- *                              BTN MENU                          |
------------------------------------------------------------------*/
-
-function buttonninja(){
-	attack.removeAttribute("disabled");
-	one.disabled = true;
-	two.disabled = true;
-	three.disabled = true;
-};
-function unbuttonninja(){
-	attack.disabled = true;
-	one.removeAttribute("disabled");
-	two.removeAttribute("disabled");
-	three.removeAttribute("disabled");
-};
     
 
 /*----------------------------------------------------------------
